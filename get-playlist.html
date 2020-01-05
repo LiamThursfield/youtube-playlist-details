@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Youtube Playlist Details</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed">
+    <script src="https://use.fontawesome.com/b8d5b56b66.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="main-container" class="flex-center-xy">
+        <header>
+			<a href="index.html"><h1>
+				<span class="youtube">YouTube</span> 
+				<span style="white-space: nowrap">Playlist Details</span>
+				<!-- DEBUG -->
+<!--				<h2>Playlist Id: <span id="playlist-id" class="youtube"></span></h2>-->
+			</h1></a>
+		</header>
+		
+		<div class="main">
+			<div class="details card">
+				<div class="thumbnail">
+					<img id="playlist-thumbnail" src="" alt="Playlist thumbnail">
+					<p class="video-length">Total playlist time: <span id="playlist-length">calculating...</span><span id="playlist-length-ms" style="display:none">0</span></p>
+				</div>
+				<div class="content">
+					<h2 id="playlist-title"></h2>
+					<p>
+					</p>
+						<span id="playlist-author" class="uploaded-author"></span> 
+						<span class="uploaded-small-details">
+							- <span id="playlist-total-videos">0</span> videos -
+							<span id="playlist-uploaded-date">0</span>
+						</span>
+					<p id="playlist-description" class="description"></p>
+				</div>
+			</div>
+			
+			<div id="loading-videos" class="card">
+					<p>
+						Loading the playlist videos...<br>
+						Sorry about the wait!<br>
+						[ <span id="videos-loaded">0</span> / <span id="videos-to-load">0</span> ]
+					</p>
+			</div>
+			
+			<div class="video-grid">
+			</div>
+		</div> <!-- End of div-class: "Main" -->
+		
+		<footer>
+			<p></p>
+		</footer>
+		
+		<button onclick="topFunction()" id="backToTopBtn" title="Back to top">Top</button>
+
+		
+<!--        
+            
+        <script>
+            var playlist_id = ""; // create variable for playlist id
+            args = location.search.substr(1).split(/&/); // create an array, containing all the GET args
+            for (var i=0; i<args.length; ++i) { // loop through the args
+                var tmp = args[i].split(/=/); // split the arg into key=>value pair array
+                // if the current arg is the 'playlist-url' arg:
+                if (tmp[0] == "playlist-url") {
+                    var playlist_url = decodeURIComponent(tmp[1]); // decode the youtube playlist url (e.g '%3A' into ':')
+                    playlist_url = playlist_url.split("list="); // split the url into the main url and the playlist id
+                    playlist_id = playlist_url[1];
+                }
+            }
+            
+            // if there is no playlist url:
+            if (playlist_url == "") {
+                alert("No URL was entered. Returning to the home page.");
+                window.location.href = 'index.html';
+            }
+            
+            // otherwise, a url was entered:
+            var span_playlist_url = document.getElementById("playlist-url"); // get the span that will display the url
+            span_playlist_url.innerHTML = playlist_id;
+            
+        </script>
+-->
+        
+    </div>
+    
+    <!-- Load all the scripts   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/api-credentials.js"></script>
+    <script src="js/main.js"></script> 
+    <script src="js/get-playlist.js"></script>
+</body>
+</html>
